@@ -2,7 +2,7 @@ echo "Hello DB"
 stages{
   steps('checkout'){
       steps{
-       git branch : 'main', credentialid:'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',
+       git branch : 'main', credentialid:'e5a4adda-8639-4cd8-9700-2d68d09bc50c',
        url: 'https://github.com/lpv1990/Databricksdemo.git'
     }
   }
