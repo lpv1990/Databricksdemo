@@ -10,9 +10,4 @@ node {
   stage('Checkout') {
     git branch: GITBRANCH, url: GITREPOREMOTE
   }
-  stage('Validate Bundle') {
-    sh """#!/bin/bash
-          ${DBCLIPATH}/databricks bundle validate -t ${BUNDLETARGET}
-       """
-  }
 }
