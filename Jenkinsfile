@@ -5,12 +5,8 @@ node{
        git branch : 'main', credentialid:'e5a4adda-8639-4cd8-9700-2d68d09bc50c',
        url: 'https://github.com/lpv1990/Databricksdemo.git'
     
-       if (fileExists("/Databricksdemo/Testfile.txt") {
-        echo "print hello"
-     def file = readFile(file: "/Databricksdemo/Testfile.txt") 
-    }
-    
+     if (fileExists("/Databricksdemo/Testfile.txt")) {
+      echo "print hello"
+     }          
   }
-   
-
 }
