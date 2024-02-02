@@ -11,9 +11,10 @@ node {
     git branch: GITBRANCH, url: GITREPOREMOTE
   }
   
-  if (fileExists("/myrepo/${params.value}.txt") {
-   def file = readFile(file: "/myrepo/${params.value}.txt") 
-  }
+  if (fileExists("/Databricksdemo/Testfile.txt") {
       echo "print hello"
+   def file = readFile(file: "/Databricksdemo/Testfile.txt") 
+  }
+    
       
 }
