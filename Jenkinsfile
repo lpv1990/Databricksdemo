@@ -14,5 +14,6 @@ node {
   if (fileExists("/myrepo/${params.value}.txt") {
    def file = readFile(file: "/myrepo/${params.value}.txt") 
   }
+      echo "print hello"
       
 }
