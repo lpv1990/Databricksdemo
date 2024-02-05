@@ -12,4 +12,10 @@ node{
        bat 'echo Hello Build stage'
         
   }
+  stage('Deploy'){
+     
+       bat 'echo Hello deploy stage'
+       bat 'C:\\Users\\l.prasanna.velaga\\AppData\\Local\\Programs\\Python\\Python311\\Scripts\\databricks.exe workspace import_dir /demoone /Shared/lakshmiDBdemo'
+        
+  }
 }
