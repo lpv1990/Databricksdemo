@@ -1,13 +1,9 @@
-node {
-  def GITREPOREMOTE = "https://github.com/lpv1990/Databricksdemo.git"
-  def GITBRANCH     = "main"
-  def DBCLIPATH     = "C:\Users\l.prasanna.velaga\AppData\Local\Programs\Python\Python311\Scripts\"
-  def JQPATH        = "C:\Users\l.prasanna.velaga\AppData\Local\Programs\Git\usr\bin\jq.exe"
-  //def JOBPREFIX     = "<job-prefix-name>"
-  def BUNDLETARGET  = "/Shared/lakshmiDBdemo"
- 
-  stage('Checkout') {
-    git branch: GITBRANCH, url: GITREPOREMOTE
+echo "Hello DB" 
+node{
+  stage('checkout'){
+     
+       git branch : 'main', credentialid:'e5a4adda-8639-4cd8-9700-2d68d09bc50c',
+       url: 'https://github.com/lpv1990/Databricksdemo.git'
+       
   }
-  
- }
+}
