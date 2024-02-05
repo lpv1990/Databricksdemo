@@ -7,4 +7,9 @@ node{
        url: 'https://github.com/lpv1990/Databricksdemo.git'
         
   }
+  stage('Build'){
+     
+       bat 'echo Hello Build stage'
+        
+  }
 }
