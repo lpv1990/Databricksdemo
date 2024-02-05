@@ -1,26 +1,13 @@
-pipeline {
-    agent any
-    stages {
-        stage ('checkout') {
-            steps {
-                git branch : 'main', credentialId:'e5a4adda-8639-4cd8-9700-2d68d09bc50c',
-                url: 'https://github.com/lpv1990/Databricksdemo.git'
-            }
-        }
-        stage ('Build') {
-            steps {
-                bat 'echo Hello Build stage'
-                //bat 'mkdir C:\\Db-jenkins-tesst'
-            }
-        }        
-        stage ('Deploy') {
-            steps {
-                bat 'echo hello Deploy stage'
-                bat 'C:\\Users\\l.prasanna.velaga\\AppData\\Local\\Programs\\Python\\Python311\\Scripts\\databricks.exe workspace import_dir /demoone /Shared/lakshmiDBdemo'
-            }
-        }
-    }
-}
-
-
-
+node {
+  def GITREPOREMOTE = "https://github.com/lpv1990/Databricksdemo.git"
+  def GITBRANCH     = "main"
+  def DBCLIPATH     = "C:\Users\l.prasanna.velaga\AppData\Local\Programs\Python\Python311\Scripts\"
+  def JQPATH        = "C:\Users\l.prasanna.velaga\AppData\Local\Programs\Git\usr\bin\jq.exe"
+  //def JOBPREFIX     = "<job-prefix-name>"
+  def BUNDLETARGET  = "/Shared/lakshmiDBdemo"
+ 
+  stage('Checkout') {
+    git branch: GITBRANCH, url: GITREPOREMOTE
+  }
+  
+ }
