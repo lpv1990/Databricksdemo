@@ -10,7 +10,7 @@ pipeline {
         stage ('Deploy') {
             steps {
                 bat 'echo hello Deploy stage'
-                bat 'C:\\Users\\l.prasanna.velaga\\AppData\\Local\\Programs\\Python\\Python311\\Scripts\\databricks.exe workspace import_dir C:\\Users\\l.prasanna.velaga\\Downloads\\Databricksdemo /Shared/lakshmiDBdemo'
+                bat 'C:\\Users\\l.prasanna.velaga\\AppData\\Local\\Programs\\Python\\Python311\\Scripts\\databricks.exe workspace import_dir https://github.com/lpv1990/Databricksdemo.git /Shared/lakshmiDBdemo'
             }
         }
     }
